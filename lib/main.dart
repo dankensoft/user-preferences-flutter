@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:preferenciasusuario/src/pages/home_page.dart';
+import 'package:preferenciasusuario/src/pages/settings_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,17 +9,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      title: 'Preferencias',
+      initialRoute: HomePage.routeName,
+      routes: {
+        HomePage.routeName: (BuildContext context) => HomePage(),
+        SettingsPage.routeName: (BuildContext context) => SettingsPage()
+      },
     );
   }
 }
